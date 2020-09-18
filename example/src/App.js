@@ -6,7 +6,13 @@ import './App.css';
 
 function App() {
     const markers = [{ top: 10, left: 15 }];
-    return <ImageMarker src={bluePrintImage} markers={markers} />;
+    return (
+        <ImageMarker
+            src={bluePrintImage}
+            markers={markers}
+            onAddMarker={(marker) => console.log(marker)}
+        />
+    );
 }
 
 export default App;

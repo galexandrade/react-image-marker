@@ -8698,8 +8698,10 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
 
-react-image-marker@/Users/alexandrade/Projects/react-image-marker:
+react-image-marker@^1.0.0:
   version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-image-marker/-/react-image-marker-1.0.0.tgz#3f33207eb6955c4c4af1fa2bb30090ebdc79d842"
+  integrity sha512-irEc9yztOJ7+oVU2EafhWexDBhdxpc8DY9G2/4hKAHHMsnV0B6uvM+8/tbOsLbBMnq/treHIgl/KsuVWlxSc/g==
 
 react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
