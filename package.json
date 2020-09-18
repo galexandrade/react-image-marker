@@ -1,37 +1,45 @@
 {
-  "name": "react-image-marker",
-  "version": "1.0.0",
-  "description": "Allows to add markers to an image",
-  "main": "build/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "rm -rf build",
-    "build": "./node_modules/.bin/babel src --out-file build/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/galexandrade/react-image-marker.git"
-  },
-  "keywords": [
-    "react",
-    "image-marker"
-  ],
-  "author": "Alex P. Andrade",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/galexandrade/react-image-marker/issues"
-  },
-  "homepage": "https://github.com/galexandrade/react-image-marker#readme",
-  "peerDependencies": {
-    "react": "^16.6.1",
-    "react-dom": "^16.6.3"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+    "name": "react-image-marker",
+    "version": "1.0.0",
+    "description": "Allows to add markers to an image",
+    "main": "build/index.js",
+    "scripts": {
+        "prebuild": "rm -rf build",
+        "build": "rollup -c",
+        "start": "rollup -c -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/galexandrade/react-image-marker.git"
+    },
+    "keywords": [
+        "react",
+        "image-marker"
+    ],
+    "author": "Alex P. Andrade",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/galexandrade/react-image-marker/issues"
+    },
+    "homepage": "https://github.com/galexandrade/react-image-marker#readme",
+    "dependencies": {},
+    "peerDependencies": {
+        "react": ">= 16.8.0",
+        "react-dom": ">= 16.8.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.3.13",
+        "@types/react-dom": "^16.0.5",
+        "babel-core": "^6.26.3",
+        "babel-runtime": "^6.26.0",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "rollup": "^1.29.0",
+        "rollup-plugin-sass": "^1.2.2",
+        "rollup-plugin-typescript2": "^0.25.3",
+        "typescript": "^2.8.3"
+    },
+    "files": [
+        "dist"
+    ]
 }
