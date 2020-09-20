@@ -1,6 +1,6 @@
 {
     "name": "react-image-marker",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Allows to add markers to an image",
     "main": "build/index.js",
     "types": "build/index.d.ts",
