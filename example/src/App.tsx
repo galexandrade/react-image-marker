@@ -8,7 +8,7 @@ function App() {
         { top: 10, left: 50 },
     ]);
     const CustomMarker = (props: MarkerComponentProps) => {
-        return <p>Coooool - {props.itemNumber}</p>;
+        return <p className="custom-marker">Coooool - {props.itemNumber}</p>;
     };
     return (
         <div className="App">
