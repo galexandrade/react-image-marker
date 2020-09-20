@@ -7,7 +7,11 @@ function App() {
     const markers = [{ top: 10, left: 50 }];
     return (
         <div className="App">
-            <ImageMarker src={CarImage} markers={markers} />
+            <ImageMarker
+                src={CarImage}
+                markers={markers}
+                onAddMarker={() => console.log('HERE')}
+            />
         </div>
     );
 }

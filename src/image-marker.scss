@@ -10,10 +10,13 @@
     }
 
     &__marker {
+        position: absolute;
+    }
+
+    &__marker--default {
         width: 25px;
         height: 25px;
         background-color: brown;
-        position: absolute;
         border-radius: 50%;
         color: white;
         text-align: center;

@@ -1,20 +1,31 @@
 import * as React from 'react';
 import './image-marker.scss';
 
-type Marker = {
+export type Marker = {
     top: Number;
     left: Number;
+};
+export type MarkerComponentProps = {
+    top: Number;
+    left: Number;
+    itemNumber: Number;
 };
 
 type Props = {
     src: string;
     markers: Array<Marker>;
-    onAddMarker: (marker: Marker) => void;
+    onAddMarker?: (marker: Marker) => void;
+    markerComponent?: React.FC<MarkerComponentProps>;
 };
-const ImageMarker: React.FC<Props> = ({ src, markers, onAddMarker }: Props) => {
+const ImageMarker: React.FC<Props> = ({
+    src,
+    markers,
+    onAddMarker,
+    markerComponent: MarkerComponent,
+}: Props) => {
     const imageRef = React.useRef<HTMLImageElement>(null);
     const handleImageClick = (event: React.MouseEvent) => {
-        if (!imageRef.current) {
+        if (!imageRef.current || !onAddMarker) {
             return;
         }
         const imageSize = imageRef.current.getBoundingClientRect();
@@ -53,11 +64,15 @@ const ImageMarker: React.FC<Props> = ({ src, markers, onAddMarker }: Props) => {
             />
             {markers.map((marker, itemNumber) => (
                 <div
-                    className="image-marker__marker"
+                    className="image-marker__marker image-marker__marker--default"
                     style={getItemPosition(marker)}
                     key={itemNumber}
                 >
-                    {itemNumber + 1}
+                    {MarkerComponent ? (
+                        <MarkerComponent {...marker} itemNumber={itemNumber} />
+                    ) : (
+                        itemNumber + 1
+                    )}
                 </div>
             ))}
         </div>
