@@ -65,7 +65,7 @@ const ImageMarker: React.FC<Props> = ({
             {markers.map((marker, itemNumber) => (
                 <div
                     className={`image-marker__marker ${
-                        MarkerComponent && 'image-marker__marker--default'
+                        !MarkerComponent && 'image-marker__marker--default'
                     }`}
                     style={getItemPosition(marker)}
                     key={itemNumber}
