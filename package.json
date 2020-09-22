@@ -5,6 +5,7 @@
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "scripts": {
+        "test": "jest",
         "prebuild": "rm -rf build",
         "build": "rollup -c",
         "start": "rollup -c -w"
@@ -29,15 +30,18 @@
         "react-dom": ">= 16.8.0"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.14",
         "@types/react": "^16.3.13",
         "@types/react-dom": "^16.0.5",
         "babel-core": "^6.26.3",
         "babel-runtime": "^6.26.0",
+        "jest": "^26.4.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "rollup": "^1.29.0",
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-typescript2": "^0.25.3",
+        "ts-jest": "^26.4.0",
         "typescript": "^2.8.3"
     },
     "files": [

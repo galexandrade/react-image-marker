@@ -1,5 +1,8 @@
 import * as React from 'react';
 import './image-marker.scss';
+import { calculateMarkerPosition } from './utils';
+
+const DEFAULT_BUFFER = 12;
 
 export type Marker = {
     top: Number;
@@ -16,34 +19,36 @@ type Props = {
     markers: Array<Marker>;
     onAddMarker?: (marker: Marker) => void;
     markerComponent?: React.FC<MarkerComponentProps>;
+    bufferLeft?: number;
+    bufferTop?: number;
 };
 const ImageMarker: React.FC<Props> = ({
     src,
     markers,
     onAddMarker,
     markerComponent: MarkerComponent,
+    bufferLeft = DEFAULT_BUFFER,
+    bufferTop = DEFAULT_BUFFER,
 }: Props) => {
     const imageRef = React.useRef<HTMLImageElement>(null);
     const handleImageClick = (event: React.MouseEvent) => {
         if (!imageRef.current || !onAddMarker) {
             return;
         }
-        const imageSize = imageRef.current.getBoundingClientRect();
-        const { width, height, top, left } = imageSize;
-        const buffer = 12;
+        const imageDimentions = imageRef.current.getBoundingClientRect();
 
-        const pixelsLeft = event.clientX - left;
-        let pixelsTop;
-        if (top < 0) {
-            pixelsTop = event.pageY - window.scrollY + top * -1;
-        } else {
-            pixelsTop = event.pageY - window.scrollY - top;
-        }
-        const position = {
-            top: ((pixelsTop - buffer) * 100) / height,
-            left: ((pixelsLeft - buffer) * 100) / width,
-        };
-        onAddMarker(position);
+        const [top, left] = calculateMarkerPosition(
+            event,
+            imageDimentions,
+            window.scrollY,
+            bufferLeft,
+            bufferTop
+        );
+
+        onAddMarker({
+            top,
+            left,
+        });
     };
 
     const getItemPosition = (marker: Marker) => {
