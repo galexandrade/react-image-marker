@@ -12,10 +12,10 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@master
             - name: Install Dependencies
-              run: npm install
+              run: yarn install
             - name: Run Tests
               env:
                   CI: true
-              run: npm test
+              run: yarn test
             - name: Upload coverage
-              run: npm coverage:upload --token="${{ secrets.CODECOV_TOKEN }}"
+              run: yarn coverage:upload --token="${{ secrets.CODECOV_TOKEN }}"
