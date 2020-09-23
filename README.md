@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/galexandrade/react-image-marker/actions" target="_blank">
+    <img src="https://github.com/galexandrade/react-image-marker/workflows/Tests/badge.svg" alt="">
+  </a>
+  <a href="https://codecov.io/gh/galexandrade/react-image-marker">
+    <img src="https://codecov.io/gh/galexandrade/react-image-marker/branch/master/graph/badge.svg" />
+    </a>
   <a href="https://www.npmjs.com/package/react-image-marker" target="_blank">
     <img src="https://badgen.net/npm/v/react-image-marker" alt="">
   </a>
