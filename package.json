@@ -9,6 +9,7 @@
         "coverage:upload": "./node_modules/.bin/codecov",
         "prebuild": "rm -rf build",
         "build": "rollup -c",
+        "postbuild": "find build -name *.test.d.ts -exec rm -if {} \\;",
         "start": "rollup -c -w"
     },
     "repository": {
@@ -30,11 +31,14 @@
         "react-dom": ">= 16.8.0"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.0.4",
         "@types/jest": "^26.0.14",
         "@types/react": "^16.3.13",
         "@types/react-dom": "^16.0.5",
         "babel-core": "^6.26.3",
         "babel-runtime": "^6.26.0",
+        "codecov": "^3.7.2",
         "jest": "^26.4.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
@@ -42,8 +46,7 @@
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-typescript2": "^0.25.3",
         "ts-jest": "^26.4.0",
-        "typescript": "^2.8.3",
-        "codecov": "^3.7.2"
+        "typescript": "^2.8.3"
     },
     "files": [
         "build"

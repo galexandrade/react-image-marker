@@ -21,6 +21,8 @@ type Props = {
     markerComponent?: React.FC<MarkerComponentProps>;
     bufferLeft?: number;
     bufferTop?: number;
+    alt?: string;
+    extraClass?: string;
 };
 const ImageMarker: React.FC<Props> = ({
     src,
@@ -29,6 +31,8 @@ const ImageMarker: React.FC<Props> = ({
     markerComponent: MarkerComponent,
     bufferLeft = DEFAULT_BUFFER,
     bufferTop = DEFAULT_BUFFER,
+    alt = 'Markers',
+    extraClass = '',
 }: Props) => {
     const imageRef = React.useRef<HTMLImageElement>(null);
     const handleImageClick = (event: React.MouseEvent) => {
@@ -62,9 +66,9 @@ const ImageMarker: React.FC<Props> = ({
         <div className="image-marker">
             <img
                 src={src}
-                alt="Blueprint"
+                alt={alt}
                 onClick={handleImageClick}
-                className="image-marker__image"
+                className={'image-marker__image ' + extraClass}
                 ref={imageRef}
             />
             {markers.map((marker, itemNumber) => (
@@ -74,6 +78,7 @@ const ImageMarker: React.FC<Props> = ({
                     }`}
                     style={getItemPosition(marker)}
                     key={itemNumber}
+                    data-testid="marker"
                 >
                     {MarkerComponent ? (
                         <MarkerComponent {...marker} itemNumber={itemNumber} />

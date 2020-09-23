@@ -7,5 +7,9 @@ module.exports = {
     transform: {
         '^.+\\.(ts|tsx)$': 'ts-jest',
     },
+    moduleNameMapper: {
+        '\\.(scss|less)$': '<rootDir>/__mocks__/styleMock.js',
+    },
+    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
     collectCoverage: true,
 };
