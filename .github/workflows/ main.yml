@@ -1,0 +1,28 @@
+name: Tests
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    test:
+        name: Tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@master
+            - name: Install Dependencies
+              run: npm install
+            - name: Run Tests
+              env:
+                  CI: true
+              run: npm test
+            - name: Upload coverage to Codecov
+              uses: codecov/codecov-action@v1
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: ./coverage/reports/
+                  flags: unittests
+                  name: codecov-umbrella
+                  fail_ci_if_error: true
+                  path_to_write_report: ./coverage/codecov_report.gz
