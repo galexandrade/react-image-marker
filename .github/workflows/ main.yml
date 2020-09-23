@@ -18,4 +18,4 @@ jobs:
                   CI: true
               run: npm test
             - name: Upload coverage
-              run: npm coverage:upload --token=${{ secrets.CODECOV_TOKEN }}
+              run: npm coverage:upload --token="${{ secrets.CODECOV_TOKEN }}"
