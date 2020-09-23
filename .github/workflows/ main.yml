@@ -18,11 +18,6 @@ jobs:
                   CI: true
               run: npm test
             - name: Upload coverage to Codecov
-              uses: codecov/codecov-action@v1
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-                  directory: ./coverage/lcov-report/
-                  flags: unittests
-                  name: codecov-umbrella
-                  fail_ci_if_error: true
-                  path_to_write_report: ./coverage/codecov_report.gz
+              env:
+                  CI: true
+              run: npm coverage:upload --token=${{ secrets.CODECOV_TOKEN }}
