@@ -25,9 +25,6 @@
         "url": "https://github.com/galexandrade/react-image-marker/issues"
     },
     "homepage": "https://github.com/galexandrade/react-image-marker#readme",
-    "dependencies": {
-        "codecov": "^3.7.2"
-    },
     "peerDependencies": {
         "react": ">= 16.8.0",
         "react-dom": ">= 16.8.0"
@@ -45,7 +42,8 @@
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-typescript2": "^0.25.3",
         "ts-jest": "^26.4.0",
-        "typescript": "^2.8.3"
+        "typescript": "^2.8.3",
+        "codecov": "^3.7.2"
     },
     "files": [
         "build"

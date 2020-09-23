@@ -16,8 +16,5 @@ jobs:
             - name: Run Tests
               env:
                   CI: true
-              run: npm test
-            - name: Upload coverage to Codecov
-              env:
-                  CI: true
+              run: npm test 
               run: npm coverage:upload --token=${{ secrets.CODECOV_TOKEN }}
