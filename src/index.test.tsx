@@ -47,4 +47,40 @@ describe('ImageMarker', () => {
         fireEvent.click(getByAltText(altText));
         expect(handleOnAddMarker).toHaveBeenCalled();
     });
+    test('it renders custom markers', () => {
+        const handleOnAddMarker = jest.fn();
+        const altText = 'My cool image';
+        const markers = [
+            {
+                top: 10,
+                left: 30,
+            },
+        ];
+
+        const CustomMarker = ({ top, left, itemNumber }: any) => (
+            <p>{`CUSTOM [${top}, ${left}, ${itemNumber}]`}</p>
+        );
+
+        const { queryByText } = render(
+            <ImageMarker
+                src="https://i.pinimg.com/originals/c3/c0/ac/c3c0ac104bb3ffa3aa2f164cd371718d.png"
+                markers={markers}
+                alt={altText}
+                onAddMarker={handleOnAddMarker}
+                markerComponent={CustomMarker}
+            />
+        );
+        expect(queryByText('CUSTOM [10, 30, 0]')).toBeInTheDocument();
+    });
+    test('it wont crash if clicks on the image and onAddMarker is not set', () => {
+        const altText = 'My cool image';
+        const { getByAltText } = render(
+            <ImageMarker
+                src="https://i.pinimg.com/originals/c3/c0/ac/c3c0ac104bb3ffa3aa2f164cd371718d.png"
+                markers={[]}
+                alt={altText}
+            />
+        );
+        fireEvent.click(getByAltText(altText));
+    });
 });

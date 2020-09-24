@@ -9,7 +9,7 @@
         "coverage:upload": "./node_modules/.bin/codecov",
         "prebuild": "rm -rf build",
         "build": "rollup -c",
-        "postbuild": "find build -name *.test.d.ts -exec rm -if {} \\;",
+        "postbuild": "find build -name *.test.d.ts -exec rm -if {} \\; && rm -r build/utils",
         "start": "rollup -c -w"
     },
     "repository": {
