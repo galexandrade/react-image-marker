@@ -18,6 +18,9 @@
   <a href="https://www.npmjs.com/package/react-image-marker" target="_blank">
     <img src="https://badgen.net/npm/dt/react-image-marker" alt="">
   </a>
+  <a href="https://bundlephobia.com/result?p=react-image-marker@1.2.0" target="_blank">
+    <img src="https://badgen.net/bundlephobia/minzip/react-image-marker@1.2.0" alt="">
+  </a>
 </p>
 
 `react-image-marker` makes it easy to add markers and tags to any image.
