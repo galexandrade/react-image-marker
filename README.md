@@ -38,11 +38,24 @@ Install with [npm](https://www.npmjs.com/), or [Yarn](https://yarnpkg.com/):
 
 ```bash
 # via npm
-npm install react-image-marker
+npm install react-image-marker --save
 
 # or Yarn (note that it will automatically save the package to your `dependencies` in `package.json`)
 yarn add react-image-marker
 ```
+
+## Props
+
+| Prop            |           Value           | Required |
+| :-------------- | :-----------------------: | :------: |
+| src             |        image path         |   Yes    |
+| markers         |       Array<Marker>       |   Yes    |
+| onAddMarker     | Function (Marker) => void |    No    |
+| markerComponent |         Component         |    No    |
+| bufferLeft      |          Number           |    No    |
+| bufferTop       |          Number           |    No    |
+| alt             |          String           |    No    |
+| extraClass      |          String           |    No    |
 
 ## Usage
 
