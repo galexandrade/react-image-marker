@@ -8,3 +8,8 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+.frame {
+    max-width: 500px;
+    margin: 0 auto;
+}

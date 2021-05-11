@@ -16,14 +16,16 @@ function App() {
     };
     return (
         <div className="App">
-            <ImageMarker
-                src={CarImage}
-                markers={markers}
-                onAddMarker={(marker: Marker) =>
-                    setMarkers([...markers, marker])
-                }
-                markerComponent={CustomMarker}
-            />
+            <div className="frame">
+                <ImageMarker
+                    src={CarImage}
+                    markers={markers}
+                    onAddMarker={(marker: Marker) =>
+                        setMarkers([...markers, marker])
+                    }
+                    markerComponent={CustomMarker}
+                />
+            </div>
         </div>
     );
 }
