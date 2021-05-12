@@ -5,13 +5,13 @@ import { calculateMarkerPosition } from './utils';
 const DEFAULT_BUFFER = 12;
 
 export type Marker = {
-    top: Number;
-    left: Number;
+    top: number;
+    left: number;
 };
 export type MarkerComponentProps = {
-    top: Number;
-    left: Number;
-    itemNumber: Number;
+    top: number;
+    left: number;
+    itemNumber: number;
 };
 
 type Props = {
